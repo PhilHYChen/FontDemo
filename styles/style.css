@@ -1,0 +1,88 @@
+/* Body */
+
+body {
+    background-color: white;
+    color: #222;
+    font-family: 'Noto Sans TC', sans-serif, serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 10%;
+}
+
+/* Title */
+
+h1, h2 {
+    letter-spacing: normal;
+    line-height: 50%;
+}
+
+
+/* General */
+
+a {
+    color: #666;
+}
+
+button {
+    background-color: white;
+    border-color: #444;
+    border-radius: 5px;
+    border-width: 2px;
+    color: #444;
+    cursor:pointer;
+    font-family: 'Noto Sans TC', sans-serif, serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+hr {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+li {
+    list-style-type: square;
+}
+
+
+/* Specifics: Font Display */
+
+.Thin_100 {
+    font-weight: 100;
+}
+
+.Light_300 {
+    font-weight: 300;
+}
+
+.Regular_400 {
+    font-weight: 400;
+}
+
+.Medium_500 {
+    font-weight: 500;
+}
+
+.Bold_700 {
+    font-weight: 700;
+}
+
+.Black_900 {
+    font-weight: 900;
+}
+
+
+
+/* Footer */
+
+footer {
+    color: #999;
+    text-align: center;
+}
