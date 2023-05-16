@@ -1,43 +1,55 @@
 /* Body */
 
 body {
-    background-color: white;
+    background-color: #fff;
     color: #222;
     font-family: 'Noto Sans TC', sans-serif, serif;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: 400;
     margin: 0 10%;
 }
 
-/* Title */
+/* Header */
+
+header {
+    margin: 5rem auto;
+}
 
 h1, h2 {
     letter-spacing: normal;
     line-height: 50%;
 }
 
+/* Navigation */
 
-/* General */
-
-a {
-    color: #666;
+nav {
+    margin: 5rem auto;
 }
 
 button {
-    background-color: white;
+    background-color: #eee;
     border-color: #444;
     border-radius: 5px;
     border-width: 2px;
     color: #444;
     cursor:pointer;
     font-family: 'Noto Sans TC', sans-serif, serif;
-    font-size: 16px;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
+/* Main: General Elements */
+
+a {
+    color: #666;
+}
+
+dl {
+    margin-left: 2.5rem;
+}
+
 hr {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin: 5rem auto;
 }
 
 
@@ -49,10 +61,15 @@ img {
 
 li {
     list-style-type: square;
+    margin: 0.5rem auto;
 }
 
 
-/* Specifics: Font Display */
+/* Main: Font Display */
+
+.dl_item {
+    margin: 2rem auto;
+}
 
 .Thin_100 {
     font-weight: 100;
@@ -83,6 +100,6 @@ li {
 /* Footer */
 
 footer {
-    color: #999;
+    margin: 5rem auto;
     text-align: center;
 }
