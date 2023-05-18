@@ -80,12 +80,13 @@ button {
     background-color: #eee;
     border-color: #444;
     border-radius: 1.75rem;
+    border-style: solid;
     border-width: 2px;
     color: #444;
     cursor:pointer;
-    font-family: 'Noto Sans TC', sans-serif, serif;
+    font-family: inherit;
     font-size: 1.75rem;
-    font-weight: 400;
+    font-weight: inherit;
     padding: 0 1rem;
 }
 
@@ -93,12 +94,13 @@ button.darkMode{
     background-color: #333;
     border-color: #fff;
     border-radius: 1.75rem;
+    border-style: solid;
     border-width: 2px;
     color: #fff;
     cursor:pointer;
-    font-family: 'Noto Sans TC', sans-serif, serif;
+    font-family: inherit;
     font-size: 1.75rem;
-    font-weight: 300;
+    font-weight: inherit;
     padding: 0 1rem;
 }
 
@@ -123,12 +125,14 @@ button.darkMode:active {
         background-color: #eee;
         border-color: #444;
         border-radius: 1.75rem;
+        border-style: solid;
         border-width: 2px;
         color: #444;
         cursor:pointer;
-        font-family: 'Noto Sans TC', sans-serif, serif;
+        font-family: inherit;
         font-size: 1.75rem;
-        font-weight: 400;
+        font-weight: inherit;
+        height: 50px;
         padding: 0 1rem;
     }
     
@@ -136,12 +140,14 @@ button.darkMode:active {
         background-color: #333;
         border-color: #fff;
         border-radius: 1.75rem;
+        border-style: solid;
         border-width: 2px;
         color: #fff;
         cursor:pointer;
-        font-family: 'Noto Sans TC', sans-serif, serif;
+        font-family: inherit;
         font-size: 1.75rem;
-        font-weight: 300;
+        font-weight: inherit;
+        height: 50px;
         padding: 0 1rem;
     }
     
@@ -162,10 +168,6 @@ button.darkMode:active {
     }
 }
 
-dl {
-    margin-left: 3rem;
-}
-
 section + hr {
     margin: 5rem auto;
 }
@@ -176,13 +178,119 @@ img {
     max-width: 100%;
 }
 
+input {
+    background-color: #eee;
+    border-color: #444;
+    border-radius: 1.75rem;
+    border-style: solid;
+    border-width: 2px;
+    color: #444;
+    cursor: text;
+    font-family: inherit;
+    font-size: 1.75rem;
+    font-weight: inherit;
+    height: 46px;
+    padding: 0 1rem;
+}
+
+input.darkMode {
+    background-color: #333;
+    border-color: #fff;
+    border-radius: 2.5rem;
+    border-style: solid;
+    border-width: 2px;
+    color: inherit;
+    cursor: text;
+    font-family: inherit;
+    font-size: 1.75rem;
+    font-weight: inherit;
+    height: 46px;
+    width: clamp(21rem, 50%, 50%);
+    padding: 0 1rem;
+}
+
+input:hover {
+    background-color: #fff;
+}
+
+input.darkMode:hover {
+    background-color: #444;
+}
+
+input:focus {
+    background-color: #ddd;
+}
+
+input.darkMode:focus {
+    background-color: #222;
+    outline: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    input.lightMode {
+        background-color: #eee;
+        border-color: #444;
+        border-radius: 1.75rem;
+        border-style: solid;
+        border-width: 2px;
+        color: #444;
+        cursor: text;
+        font-family: inherit;
+        font-size: 1.75rem;
+        font-weight: inherit;
+        height: 46px;
+        padding: 0 1rem;
+    }
+    
+    input {
+        background-color: #333;
+        border-color: #fff;
+        border-radius: 2.5rem;
+        border-style: solid;
+        border-width: 2px;
+        color: inherit;
+        cursor: text;
+        font-family: inherit;
+        font-size: 1.75rem;
+        font-weight: inherit;
+        height: 46px;
+        width: clamp(21rem, 50%, 50%);
+        padding: 0 1rem;
+    }
+
+    input.lightMode:hover {
+        background-color: #fff;
+    }
+
+    input:hover {
+        background-color: #444;
+    }
+
+    input.lightMode:focus {
+        background-color: #ddd;
+    }
+
+    input:focus {
+        background-color: #222;
+        outline: none;
+    }
+}
+
 li {
     list-style-type: square;
     margin: 0.5rem auto;
 }
 
+strong {
+    font-weight: 700;
+}
 
 /* Main: Font Display */
+
+.listView {
+    margin-left: 21px;
+    margin-top: calc(21px + 1.75rem);
+}
 
 .listView > div {
     margin: 2rem auto;
