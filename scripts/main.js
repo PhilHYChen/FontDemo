@@ -57,11 +57,20 @@ document.getElementById("changeDisplayText").addEventListener("input", () => {
     document.querySelectorAll("#fontDisplay dd").forEach(
         element => element.textContent =
         document.getElementById("changeDisplayText").value.toString());
-    }
-);
+});
 document.getElementById("changeDisplayText").addEventListener("focusout", () => {
     if (document.getElementById("changeDisplayText").value === "")
     document.querySelectorAll("#fontDisplay dd").forEach(
         element => element.textContent = "法律之前人人平等，並有權享受法律的平等保護，不受任何歧視。人人有權享受平等保護，以免受違反本宣言的任何歧視行為以及煽動這種歧視的任何行為之害。")
-    }
-);
+});
+
+//Font Display: Change Display Size
+document.getElementById("changeDisplaySize").addEventListener("change", () => {
+    changeDisplaySize(document.querySelector("#changeDisplaySize").value)
+});
+
+function changeDisplaySize(fontSizeOption) {
+    document.querySelectorAll("#fontDisplay dd").forEach(
+        element => element.style.fontSize = fontSizeOption
+    )
+};
