@@ -24,6 +24,7 @@ function toggleLightMode() {
     document.querySelector("body").classList.toggle("lightMode");
     document.querySelectorAll("button").forEach(element => element.classList.toggle("lightMode"));
     document.querySelectorAll("input").forEach(element => element.classList.toggle("lightMode"));
+    document.querySelectorAll("select").forEach(element => element.classList.toggle("lightMode"));
     document.getElementById("toggleDarkMode").textContent = 
         (getComputedStyle(document.body).backgroundColor === "rgb(255, 255, 255)") ?
         "開啟深色模式" : "關閉深色模式";
@@ -36,6 +37,7 @@ function toggleDarkMode() {
     document.querySelector("body").classList.toggle("darkMode");
     document.querySelectorAll("button").forEach(element => element.classList.toggle("darkMode"));
     document.querySelectorAll("input").forEach(element => element.classList.toggle("darkMode"));
+    document.querySelectorAll("select").forEach(element => element.classList.toggle("darkMode"));
     document.getElementById("toggleDarkMode").textContent = 
         (getComputedStyle(document.body).backgroundColor === "rgb(255, 255, 255)") ?
         "開啟深色模式" : "關閉深色模式"
@@ -52,25 +54,61 @@ document.getElementById("toggleListGridView").addEventListener("click", () => {
         "列表檢視" : "格狀檢視"
 });
 
-// Font Display: Change Display Text
-document.getElementById("changeDisplayText").addEventListener("input", () => {
+// Font Display: Modify Display Text
+document.getElementById("modDisplayText").addEventListener("input", () => {
     document.querySelectorAll("#fontDisplay dd").forEach(
         element => element.textContent =
-        document.getElementById("changeDisplayText").value.toString());
+        document.getElementById("modDisplayText").value.toString());
 });
-document.getElementById("changeDisplayText").addEventListener("focusout", () => {
-    if (document.getElementById("changeDisplayText").value === "")
+document.getElementById("modDisplayText").addEventListener("focusout", () => {
+    if (document.getElementById("modDisplayText").value === "")
     document.querySelectorAll("#fontDisplay dd").forEach(
         element => element.textContent = "法律之前人人平等，並有權享受法律的平等保護，不受任何歧視。人人有權享受平等保護，以免受違反本宣言的任何歧視行為以及煽動這種歧視的任何行為之害。")
 });
 
-//Font Display: Change Display Size
-document.getElementById("changeDisplaySize").addEventListener("change", () => {
-    changeDisplaySize(document.querySelector("#changeDisplaySize").value)
-});
+// Font Display: Modify Display Font Size
 
-function changeDisplaySize(fontSizeOption) {
-    document.querySelectorAll("#fontDisplay dd").forEach(
-        element => element.style.fontSize = fontSizeOption
-    )
-};
+    // Set initial display size auto-select:
+    let isSelected = false;
+
+        // If a matching option is present, it is selected.
+        document.querySelectorAll("#modDisplayFontSize option").forEach(
+            element => {
+                if (element.textContent === window.getComputedStyle(document.body).getPropertyValue("font-size")) {
+                    element.setAttribute("selected", true);
+                    isSelected = true;
+                }
+            }
+        )
+        /* If no matching option is present, a new option is:
+        created and added to the dropdown menu,
+        assigned text content with computed font size,
+        selected and
+        sorted. */
+        if (isSelected === false) {
+            let newOption = document.getElementById("modDisplayFontSize").appendChild(document.createElement("option"));
+            newOption.textContent = window.getComputedStyle(document.body).getPropertyValue("font-size");
+            newOption.setAttribute("selected", true);
+            let optionArray = Array.from(
+                document.getElementById("modDisplayFontSize").options
+            );
+            // Unit test:
+            // alert(optionArray);
+            optionArray.sort((a, b) => parseInt(a.value) - parseInt(b.value));
+            optionArray.forEach(
+                element => document.getElementById("modDisplayFontSize").appendChild(element)
+            )
+        }
+
+    // Dropdown menu function:
+    document.getElementById("modDisplayFontSize").addEventListener("change", () => {
+        modDisplayFontSize(document.getElementById("modDisplayFontSize").value)
+    });
+
+    function modDisplayFontSize(fontSizeOption) {
+        document.querySelectorAll("#fontDisplay dd").forEach(
+            element => element.style.fontSize = fontSizeOption
+        )
+    };
+
+    // Slide bar function:

@@ -38,26 +38,6 @@ body.darkMode {
     }
 }
 
-/* Header */
-
-header {
-    margin: 5rem auto;
-}
-
-h1, h2 {
-    letter-spacing: normal;
-    line-height: 50%;
-}
-
-/* Navigation */
-
-nav {
-    margin: 5rem auto;
-}
-
-
-/* Main: General Elements */
-
 a {
     color: #666;
 }
@@ -172,16 +152,6 @@ button.darkMode:active {
     }
 }
 
-section + hr {
-    margin: 5rem auto;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
 input {
     background-color: #eee;
     border-color: #444;
@@ -278,11 +248,6 @@ input.darkMode:focus {
     }
 }
 
-li {
-    list-style-type: square;
-    margin: 0.5rem auto;
-}
-
 select {
     background-color: #eee;
     border-color: #444;
@@ -375,14 +340,48 @@ select.darkMode:active {
     }
 }
 
+/* Header */
+
+header {
+    margin: 5rem auto;
+}
+
+h1, h2 {
+    letter-spacing: normal;
+    line-height: 50%;
+}
+
+/* Navigation */
+
+nav {
+    margin: 5rem auto;
+}
+
+
+/* Main: General */
+
+section + hr {
+    margin: 5rem auto;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+li {
+    list-style-type: square;
+    margin: 0.5rem auto;
+}
 
 strong {
     font-weight: 700;
 }
 
-/* Main: Font Display Control Panel */
+/* Main: Font Display Control Flex Container */
 
-#displayCtrlContainer {
+#displayCtrlFlexContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -390,26 +389,42 @@ strong {
 
 
 #toggleListGridView {
-    width: 10rem;
+    flex-basis: 10rem;
+    flex-shrink: 0;
 }
 
-#changeDisplayText {
+#modDisplayText {
     flex: 1;
 }
 
 
-#changeDisplaySize {
-    width: 10rem;
+#modDisplayFontSize {
+    flex-basis: 10rem;
+    flex-shrink: 0;
 }
 
-/* @media (max-width: 1080px) {
-    #displayCtrlContainer {
+@media (max-width: 1080px) {
+    #displayCtrlFlexContainer {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
         gap: 0.5rem;
     }
-} */
+
+    #toggleListGridView {
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+    
+    #modDisplayText {
+        flex: 1;
+    }
+    
+    
+    #modDisplayFontSize {
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+}
 
 
 /* Main: Font Display */
