@@ -68,10 +68,10 @@ document.getElementById("customTextInput").addEventListener("focusout", () => {
 
 // Font Demo: Font Size Controllers
 
-    // Set initial display size auto-select:
+    // Auto-assign the computed font size of <body> as the default value for the Dropdown Menu and the Slider:
     let isSelected = false;
 
-        /* Dropdown Menu: if a matching option is present, it is selected. */
+        /* Dropdown Menu: if an option matches the computed font size of <body>, it is selected. */
         document.querySelectorAll("#fontSizeDropdownMenu option").forEach(
             element => {
                 if (element.textContent === window.getComputedStyle(document.body).getPropertyValue("font-size")) {
@@ -99,36 +99,24 @@ document.getElementById("customTextInput").addEventListener("focusout", () => {
                 element => document.getElementById("fontSizeDropdownMenu").appendChild(element)
             )
         }
-        /* Slider: ㄋet value to computed font size of <body> */
+        /* Slider: let value to computed font size of <body> */
         document.getElementById("fontSizeSlider").value = parseInt(window.getComputedStyle(document.body).getPropertyValue("font-size"));
 
     
-    // Dropdown Menu:
+    // Dropdown Menu Core function:
     document.getElementById("fontSizeDropdownMenu").addEventListener("change", () => {
         document.querySelectorAll("#fontDemo dd").forEach(
             element => element.style.fontSize = document.getElementById("fontSizeDropdownMenu").value
         )
 
-        /* Linking Slider */
+        /* Matching Slider value with Dropdown Menu*/
         document.getElementById("fontSizeSlider").value = parseInt(document.getElementById("fontSizeDropdownMenu").value);
         dynamicOption.remove();
         isOriginalMenu = true;
     });
 
 
-    // Slider:
-    // document.getElementById("fontSizeSlider").addEventListener("input", () => {
-        // document.querySelectorAll("#fontDemo dd").forEach(
-        //     element => element.style.fontSize = document.getElementById("fontSizeSlider").value.toString() + "px"
-        // )
-        
-        // let dynamicOption;
-
-        // (isOptionAvailable) ?
-        // {create new option element; appendChild to menu; sort the menu; } : {}
-        
-    // };    
-    
+    // Slider Core function:
     let isOriginalMenu = true;
     let isOptionAvailable;
     let dynamicOption;
@@ -137,7 +125,7 @@ document.getElementById("customTextInput").addEventListener("focusout", () => {
         document.querySelectorAll("#fontDemo dd").forEach(
             element => element.style.fontSize = document.getElementById("fontSizeSlider").value.toString() + "px"
         )
-        
+        /* Matching Dropdown Menu value with Slider */
         /* if (isOriginalMenu === true) {
             (isOptionAvailable) ? 
             {select} : 
