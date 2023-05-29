@@ -1,3 +1,13 @@
+/* Normalization */
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 /* Global & Dark Mode */
 
 body {
@@ -56,7 +66,7 @@ a.darkMode {
     }
 }
 
-button {
+.interactive {
     background-color: #eee;
     border-color: #444;
     border-radius: 1.75rem;
@@ -67,10 +77,12 @@ button {
     font-family: inherit;
     font-size: 1.75rem;
     font-weight: inherit;
+    height: 50px;
+    margin: 0.5rem auto;
     padding: 0 1rem;
 }
 
-button.darkMode{
+.interactive.darkMode{
     background-color: #333;
     border-color: #fff;
     border-radius: 1.75rem;
@@ -81,27 +93,29 @@ button.darkMode{
     font-family: inherit;
     font-size: 1.75rem;
     font-weight: inherit;
+    height: 50px;
+    margin: 0.5rem auto;
     padding: 0 1rem;
 }
 
-button:hover {
+.interactive:hover {
     background-color: #fff;
 }
 
-button.darkMode:hover {
+.interactive.darkMode:hover {
     background-color: #444;
 }
 
-button:active{
+.interactive:active{
     background-color: #ddd;
 }
 
-button.darkMode:active {
+.interactive.darkMode:active {
     background-color: #222;
 }
 
 @media (prefers-color-scheme: dark) {
-    button.lightMode {
+    .interactive.lightMode {
         background-color: #eee;
         border-color: #444;
         border-radius: 1.75rem;
@@ -113,10 +127,11 @@ button.darkMode:active {
         font-size: 1.75rem;
         font-weight: inherit;
         height: 50px;
+        margin: 0.5rem auto;
         padding: 0 1rem;
     }
     
-    button {
+    .interactive {
         background-color: #333;
         border-color: #fff;
         border-radius: 1.75rem;
@@ -128,210 +143,23 @@ button.darkMode:active {
         font-size: 1.75rem;
         font-weight: inherit;
         height: 50px;
+        margin: 0.5rem auto;
         padding: 0 1rem;
     }
     
-    button.lightMode:hover {
+    .interactive.lightMode:hover {
         background-color: #fff;
     }
     
-    button:hover {
+    .interactive:hover {
         background-color: #444;
     }
     
-    button.lightMode:active{
+    .interactive.lightMode:active{
         background-color: #ddd;
     }
     
-    button:active {
-        background-color: #222;
-    }
-}
-
-input[type="text"] {
-    background-color: #eee;
-    border-color: #444;
-    border-radius: 1.75rem;
-    border-style: solid;
-    border-width: 2px;
-    color: #444;
-    cursor: text;
-    font-family: inherit;
-    font-size: 1.75rem;
-    font-weight: inherit;
-    height: 46px;
-    padding: 0 1rem;
-}
-
-input[type="text"].darkMode {
-    background-color: #333;
-    border-color: #fff;
-    border-radius: 2.5rem;
-    border-style: solid;
-    border-width: 2px;
-    color: inherit;
-    cursor: text;
-    font-family: inherit;
-    font-size: 1.75rem;
-    font-weight: inherit;
-    height: 46px;
-    padding: 0 1rem;
-}
-
-input[type="text"]:hover {
-    background-color: #fff;
-}
-
-input[type="text"].darkMode:hover {
-    background-color: #444;
-}
-
-input[type="text"]:focus {
-    background-color: #ddd;
-}
-
-input[type="text"].darkMode:focus {
-    background-color: #222;
-    outline: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    input[type="text"].lightMode {
-        background-color: #eee;
-        border-color: #444;
-        border-radius: 1.75rem;
-        border-style: solid;
-        border-width: 2px;
-        color: #444;
-        cursor: text;
-        font-family: inherit;
-        font-size: 1.75rem;
-        font-weight: inherit;
-        height: 46px;
-        padding: 0 1rem;
-    }
-    
-    input[type="text"] {
-        background-color: #333;
-        border-color: #fff;
-        border-radius: 2.5rem;
-        border-style: solid;
-        border-width: 2px;
-        color: inherit;
-        cursor: text;
-        font-family: inherit;
-        font-size: 1.75rem;
-        font-weight: inherit;
-        height: 46px;
-        padding: 0 1rem;
-    }
-
-    input[type="text"].lightMode:hover {
-        background-color: #fff;
-    }
-
-    input[type="text"]:hover {
-        background-color: #444;
-    }
-
-    input[type="text"].lightMode:focus {
-        background-color: #ddd;
-    }
-
-    input[type="text"]:focus {
-        background-color: #222;
-        outline: none;
-    }
-}
-
-select {
-    background-color: #eee;
-    border-color: #444;
-    border-radius: 1.75rem;
-    border-style: solid;
-    border-width: 2px;
-    color: #444;
-    cursor:pointer;
-    font-family: inherit;
-    font-size: 1.75rem;
-    font-weight: inherit;
-    padding: 0 1rem;
-}
-
-select.darkMode{
-    background-color: #333;
-    border-color: #fff;
-    border-radius: 1.75rem;
-    border-style: solid;
-    border-width: 2px;
-    color: #fff;
-    cursor:pointer;
-    font-family: inherit;
-    font-size: 1.75rem;
-    font-weight: inherit;
-    padding: 0 1rem;
-}
-
-select:hover {
-    background-color: #fff;
-}
-
-select.darkMode:hover {
-    background-color: #444;
-}
-
-select:active{
-    background-color: #ddd;
-}
-
-select.darkMode:active {
-    background-color: #222;
-}
-
-@media (prefers-color-scheme: dark) {
-    select.lightMode {
-        background-color: #eee;
-        border-color: #444;
-        border-radius: 1.75rem;
-        border-style: solid;
-        border-width: 2px;
-        color: #444;
-        cursor:pointer;
-        font-family: inherit;
-        font-size: 1.75rem;
-        font-weight: inherit;
-        height: 50px;
-        padding: 0 1rem;
-    }
-    
-    select {
-        background-color: #333;
-        border-color: #fff;
-        border-radius: 1.75rem;
-        border-style: solid;
-        border-width: 2px;
-        color: #fff;
-        cursor:pointer;
-        font-family: inherit;
-        font-size: 1.75rem;
-        font-weight: inherit;
-        height: 50px;
-        padding: 0 1rem;
-    }
-    
-    select.lightMode:hover {
-        background-color: #fff;
-    }
-    
-    select:hover {
-        background-color: #444;
-    }
-    
-    select.lightMode:active{
-        background-color: #ddd;
-    }
-    
-    select:active {
+    .interactive:active {
         background-color: #222;
     }
 }
@@ -355,10 +183,6 @@ nav {
 
 
 /* Main: General */
-
-.interactive {
-    margin: 0.5rem auto;
-}
 
 section + hr {
     margin: 5rem auto;
